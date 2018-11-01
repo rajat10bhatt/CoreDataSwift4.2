@@ -7,10 +7,21 @@
 //
 
 import UIKit
+import CoreData
 
 class LessonTableViewController: UITableViewController {
     
-    let students = ["Ben", "John"]
+    var moc: NSManagedObjectContext? {
+        didSet {
+            if let moc = moc {
+                lessonService = LessonService(moc: moc)
+            }
+        }
+    }
+    
+    //MARK: Private
+    private var lessonService: LessonService?
+    var students: [Student] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,7 +52,8 @@ class LessonTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "studentCell", for: indexPath)
 
-        cell.textLabel?.text = students[indexPath.row]
+        cell.textLabel?.text = students[indexPath.row].name
+        cell.detailTextLabel?.text = students[indexPath.row].lesson?.type
 
         return cell
     }
@@ -56,8 +68,18 @@ class LessonTableViewController: UITableViewController {
             textField.placeholder = "Lesson Type: Ski | Snowboard"
         }
         
-        let defaultAction = UIAlertAction(title: actionType.uppercased(), style: .default) { (action) in
-            
+        let defaultAction = UIAlertAction(title: actionType.uppercased(), style: .default) {[weak self] (action) in
+            guard let studentName = alertController.textFields?[0].text, let lessonName = alertController.textFields?[1].text else { return }
+            if actionType.caseInsensitiveCompare("add") == .orderedSame {
+                if let lessonType = LessonType(rawValue: lessonName.lowercased()) {
+                    self?.lessonService?.addStudent(name: studentName, for: lessonType, completion: { (success, students) in
+                        self?.students = students
+                    })
+                }
+            }
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .default) { (action) in

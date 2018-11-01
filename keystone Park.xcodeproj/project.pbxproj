@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04264891218B07FB003D1DF8 /* LessonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04264890218B07FB003D1DF8 /* LessonService.swift */; };
 		0494B4802188801200222F31 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0494B47F2188801200222F31 /* AppDelegate.swift */; };
-		0494B4822188801200222F31 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0494B4812188801200222F31 /* ViewController.swift */; };
 		0494B4852188801200222F31 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0494B4832188801200222F31 /* Main.storyboard */; };
 		0494B4882188801200222F31 /* keystone_Park.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0494B4862188801200222F31 /* keystone_Park.xcdatamodeld */; };
 		0494B48A2188801400222F31 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0494B4892188801400222F31 /* Assets.xcassets */; };
@@ -21,9 +21,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04264890218B07FB003D1DF8 /* LessonService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LessonService.swift; sourceTree = "<group>"; };
 		0494B47C2188801200222F31 /* keystone Park.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "keystone Park.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0494B47F2188801200222F31 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0494B4812188801200222F31 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0494B4842188801200222F31 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0494B4872188801200222F31 /* keystone_Park.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = keystone_Park.xcdatamodel; sourceTree = "<group>"; };
 		0494B4892188801400222F31 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -47,6 +47,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04264892218B0801003D1DF8 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				04264890218B07FB003D1DF8 /* LessonService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		0494B4732188801200222F31 = {
 			isa = PBXGroup;
 			children = (
@@ -68,12 +76,12 @@
 			children = (
 				0494B4A42188831C00222F31 /* DataModel */,
 				0494B47F2188801200222F31 /* AppDelegate.swift */,
-				0494B4812188801200222F31 /* ViewController.swift */,
 				0494B4832188801200222F31 /* Main.storyboard */,
 				0494B4892188801400222F31 /* Assets.xcassets */,
 				0494B48B2188801400222F31 /* LaunchScreen.storyboard */,
 				0494B48E2188801400222F31 /* Info.plist */,
 				0494B4A7218884E800222F31 /* Controller */,
+				04264892218B0801003D1DF8 /* Services */,
 			);
 			path = "keystone Park";
 			sourceTree = "<group>";
@@ -169,9 +177,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0494B4822188801200222F31 /* ViewController.swift in Sources */,
 				0494B4A0218882F200222F31 /* Student+CoreDataClass.swift in Sources */,
 				0494B4A3218882F200222F31 /* Lesson+CoreDataProperties.swift in Sources */,
+				04264891218B07FB003D1DF8 /* LessonService.swift in Sources */,
 				0494B4882188801200222F31 /* keystone_Park.xcdatamodeld in Sources */,
 				0494B4802188801200222F31 /* AppDelegate.swift in Sources */,
 				0494B4A6218884E400222F31 /* LessonTableViewController.swift in Sources */,
